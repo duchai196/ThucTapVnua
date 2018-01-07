@@ -1,2 +1,2 @@
 <?php
-echo "mgiuem duc hai";
+echo "duc hai dz";
