@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
+    Route::resource('category', 'CategoryController');
+    Route::resource('product', 'ProductController');
+    Route::resource('customer', 'CustomerController');
+    Route::resource('type-post', 'TypePostController');
+    Route::resource('post', 'PostController');
+
+});
