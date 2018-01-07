@@ -15,7 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_cus');
+            $table->integer('amount');
+            $table->decimal('total', 15, 0);
+            $table->tinyInteger('status')->nullable();
+            $table->string('payment');
             $table->timestamps();
+
+            $table->foreign('id_cus')->references('id')->on('customers');
         });
     }
 
