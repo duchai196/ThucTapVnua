@@ -19,10 +19,10 @@ class CreatePostsTable extends Migration
             $table->string('slug')->unique();
             $table->longText('content');
             $table->string('image');
-            $table->integer('id_cate');
+            $table->integer('id_cate')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_cate')->references('id')->on('type_posts')->onDelete('cascade');
+//            $table->foreign('id_cate')->references('id')->on('type_posts')->onDelete('cascade');
         });
     }
 
