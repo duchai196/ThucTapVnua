@@ -1,2 +1,2 @@
 <?php
-echo "duc hai dz";
+echo 2;
