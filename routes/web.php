@@ -23,3 +23,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
     Route::resource('post', 'PostController');
 
 });
+
+Route::view('editor', 'vendor.laravel-filemanager.demo');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
