@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Category;
 use App\Http\Requests\CategoryRequest;
+use DB, Session;
+
 
 class CategoryController extends Controller
 {
@@ -16,7 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::paginate(12);
+        return view('admin.category.list', compact('categories'));
     }
 
     /**
@@ -26,8 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
-        return view('admin.category.add');
+        $parent = Category::all();
+        return view('admin.category.add', compact('parent', 'categories'));
     }
 
     /**
@@ -40,9 +43,12 @@ class CategoryController extends Controller
     {
         $category = new Category();
         $category->name = $request->name;
-        $category->parent = $request->parent;
-        $category->status = $request->status;
+        $category->parent = $request->parent_cate;
+        $category->banner = $request->filepath;
         $category->save();
+        Session::flash('message', 'Thêm danh mục thành công!');
+        $parent = Category::all();
+        return view('admin.category.add', compact('parent'));
     }
 
     /**
@@ -64,7 +70,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.category.edit');
+        $parent = Category::all();
+        $cate = Category::findOrFail($id);
+        return view('admin.category.edit', compact('parent', 'cate'));
     }
 
     /**
@@ -76,7 +84,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ], [
+            'name.required' => 'Bạn chưa nhập tên danh mục'
+        ]);
+        $cate_update = Category::find($id);
+        $cate_update->name = $request->name;
+        $cate_update->banner = $request->filepath;
+        $cate_update->parent = $request->parent_cate;
+
+        $cate_update->save();
+        Session::flash('message', 'Cập nhật thành công!');
+        $parent = Category::paginate(12);
+        return view('admin.category.list', compact('parent'));
+
     }
 
     /**
@@ -88,5 +110,23 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function postDelete(Request $request)
+    {
+        $id = $request->id_cate;
+        $action = $request->action;
+        if ($action == "DeleteCate") {
+            $cate = DB::table('categories')->where('parent', '=', $id)->count();
+
+            if ($cate == 0) {
+                $cate_item = Category::findOrFail($id);
+
+                if ($cate_item->delete()) {
+                    return json_encode(true);
+                }
+            }
+            return json_encode(false);
+        }
     }
 }

@@ -85,8 +85,13 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
 </script>
 
+<script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+<script>
+    $('#lfm').filemanager('image');
+</script>
 
 @yield('script')
 

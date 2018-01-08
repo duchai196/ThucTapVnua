@@ -42,12 +42,9 @@
 
                 </li>
                 <li>
-                    <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-drupal"></i><span
+                    <a href="{{route('category.create')}}"><i class="mdi mdi-drupal"></i><span
                                 class="hide-menu">Danh mục sản phẩm</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{route('category.index')}}">Danh sách </a></li>
-                        <li><a href="{{route('category.create')}}">Thêm danh mục mới</a></li>
-                    </ul>
+
                 </li>
                 <li>
                     <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-xbox"></i><span

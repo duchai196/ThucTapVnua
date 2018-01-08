@@ -1,3 +1,4 @@
+
 @section('css')
     <link href="plugins/footable/css/footable.core.css" rel="stylesheet">
     <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet"/>

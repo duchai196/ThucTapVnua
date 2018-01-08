@@ -2,7 +2,9 @@
     <link href="plugins/footable/css/footable.core.css" rel="stylesheet">
     <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet"/>
 @endsection
-
+@section('title')
+    DANH MỤC SẢN PHẨM
+@endsection
 @extends('admin.master')
 @section('content')
 
@@ -12,8 +14,7 @@
             <!-- Column -->
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">Add & Remove Rows</h4>
-                    <h6 class="card-subtitle">You can add or remove rows with Footable</h6>
+                    <h4 class="card-title">Danh mục sản phẩm cho cửa hàng của bạn được quản lý ở đây</h4>
                     <table id="demo-foo-addrow2" class="table table-bordered table-hover toggle-circle"
                            data-page-size="7">
                         <thead>
@@ -22,7 +23,7 @@
                             <th data-sort-initial="true" data-toggle="true">Tên</th>
                             <th>Danh mục cha</th>
                             <th data-hide="phone, tablet">Banner</th>
-                            <th data-hide="phone, tablet">Ảnh</th>
+                            <th data-hide="phone, tablet">Lượt</th>
                             <th data-sort-ignore="true" class="min-width" style="text-align: center">Hành động</th>
                         </tr>
                         </thead>
@@ -37,15 +38,17 @@
                             </div>
                         </div>
                         <tbody>
-                        @foreach($lists_cate as $item_cate)
+                        @foreach($parent as $item_cate)
                             <tr>
                                 <td>{{$item_cate->id}}</td>
                                 <td>{{$item_cate->name}}</td>
-                                <td>{{$item_cate->parent_cate}}</td>
-                                <td><img src="{{asset('/uploads/category/banner/').'/'.$item_cate->banner}}" alt=""
+                                <td>{{$item_cate->parent}}</td>
+                                <td><img src="{{$item_cate->banner}}" alt=""
                                          width="80px" height="60px"></td>
-                                <td><img src="{{asset('/uploads/category/image/').'/'.$item_cate->image}}" alt=""
-                                         width="80px" height="60px"></td>
+                                <td>
+                                    {{$item_cate->times}}
+
+                                </td>
                                 {{--   <td> --}}
                                 {{--  <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button> --}}
                                 <td class="text-nowrap" style="text-align: center">
@@ -88,14 +91,15 @@
             if (confirm('Bạn có chắc muốn xóa?')) {
                 var id_cate = $(this).attr('data-cate-id');
                 $.ajax({
-                    url: '{{route('category.ajax')}}',
+                    url: '{{ route('category.delete') }}',
                     type: 'POST',
                     dataType: 'json',
                     data: {id_cate: id_cate, action: 'DeleteCate'},
                 })
                     .done(function (data) {
                         if (data == true) {
-                            $('#demo-foo-addrow2').load(window.location.href + " #demo-foo-addrow2");
+
+                            $('#demo-foo-addrow2').load(window.location.href + " .table");
                         }
                         if (data == false) {
                             alert('Xoá danh mục con trước!');

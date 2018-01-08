@@ -1,10 +1,20 @@
 @extends('admin.master')
+
 @section('content')
+@section('title')
+    Sửa danh mục
+@endsection
 
-
+@if(count($errors)>0)
+    @foreach($errors->all() as $err)
+        <div class="alert alert-warning alert-rounded">
+            {!! $err !!}
+        </div>
+    @endforeach
+@endif
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-8">
             <div class="card">
                 <div class="card-block">
                     <h4 class="card-title">Sửa danh mục</h4>
@@ -21,44 +31,27 @@
                             <div class="form-group">
                                 <label>Danh mục cha</label>
                                 <select class="form-control" name="parent_cate">
+                                    <option value="0">Chọn danh mục cha</option>
                                     <?php cate_parent($parent)?>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Update banner</label>
-                                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                    <div class="form-control" data-trigger="fileinput"><i
-                                                class="glyphicon glyphicon-file fileinput-exists"></i> <span
-                                                class="fileinput-filename"></span></div>
-                                    <span class="input-group-addon btn btn-default btn-file"> <span
-                                                class="fileinput-new">Select file</span> <span class="fileinput-exists">Change</span>
-                                   
 
-                                    <input type="file" name="banner"> </span> <a href="form-material.html#"
-                                                                                 class="input-group-addon btn btn-default fileinput-exists"
-                                                                                 data-dismiss="fileinput">Remove</a>
-                                </div>
                                 @if(!empty($cate->banner))
-                                    <img src="../uploads/category/banner/{{$cate->banner}}">
+                                <img src="{{$cate->banner}}" width="150px" height="auto">
                                 @endif
 
-                            </div>
-                            <div class="form-group">
-                                <label>Update image</label>
-                                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                    <div class="form-control" data-trigger="fileinput"><i
-                                                class="glyphicon glyphicon-file fileinput-exists"></i> <span
-                                                class="fileinput-filename"></span></div>
-                                    <span class="input-group-addon btn btn-default btn-file"> <span
-                                                class="fileinput-new">Select file</span> <span class="fileinput-exists">Change</span>
-                                    <input type="file" name="image"> </span> <a href="form-material.html#"
-                                                                                class="input-group-addon btn btn-default fileinput-exists"
-                                                                                data-dismiss="fileinput">Remove</a>
+                            <div class="input-group">
+                                <label>Banner danh mục</label>
+                                <div class="input-group-btn">
+                                    <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-default">
+                                        <i class="fa fa-picture-o"></i> Choose
+                                    </a>
                                 </div>
-                                @if(!empty($cate->image))
-                                    <img src="../uploads/category/image/{{$cate->image}}">
-                                @endif
+                                <input id="thumbnail" class="form-control " type="text" name="filepath"
+                                       value="{!! old('filepath',isset($cate)? $cate->banner: NULL) !!}">
                             </div>
+                            <img id="holder" style="margin-top:15px;max-height:100px;">
+
 
                             <a href="{{route('category.index')}}" class="btn  btn-waring"><i class="fa fa-undo"></i> Hủy
                                 bỏ</a>
@@ -70,4 +63,35 @@
         </div>
 
 
+@endsection
+        @section('script')
+            <script src="plugins/footable/js/footable.all.min.js"></script>
+            <script src="plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+            <script src="js/footable-init.js"></script>
+            <script type="text/javascript">
+
+                $(document).on('click', '.DeleteCate', function (event) {
+                    if (confirm('Bạn có chắc muốn xóa?')) {
+                        var id_cate = $(this).attr('data-cate-id');
+                        $.ajax({
+                            url: '{{ route('category.delete') }}',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {id_cate: id_cate, action: 'DeleteCate'},
+                        })
+                            .done(function (data) {
+                                if (data == true) {
+
+                                    $('#demo-foo-addrow2').load(window.location.href + " .table");
+                                }
+                                if (data == false) {
+                                    alert('Xoá danh mục con trước!');
+                                }
+
+                            })
+                    }
+                });
+
+
+            </script>
 @endsection
