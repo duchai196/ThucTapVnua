@@ -33,7 +33,7 @@ class ProductRequest extends FormRequest
          'name.required'=>'Bạn chưa nhập tên sản phẩm',
          'name.max'=>'Tên không vượt quá 255 ký tự',
          'name.min'=>'Tên không ngắn hơn 3 ký tự',
-         'name.unique'=>'Sản phẩm đã tồn tại'
+         'name.unique'=>'Tên sản phẩm đã tồn tại'
        ];
     }
 }
