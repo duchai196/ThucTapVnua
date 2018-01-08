@@ -67,7 +67,7 @@
                             <th>ID</th>
                             <th data-sort-initial="true" data-toggle="true">Tên</th>
                             <th>Danh mục cha</th>
-                            <th data-hide="phone, tablet">Lượt</th>
+                            <th>Lượt</th>
                             <th data-sort-ignore="true" class="min-width" style="text-align: center">Hành động</th>
                         </tr>
                         </thead>
