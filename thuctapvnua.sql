@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 09, 2018 lúc 04:44 PM
--- Phiên bản máy phục vụ: 10.1.26-MariaDB
--- Phiên bản PHP: 7.1.8
+-- Thời gian đã tạo: Th1 09, 2018 lúc 08:28 PM
+-- Phiên bản máy phục vụ: 10.1.29-MariaDB
+-- Phiên bản PHP: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -74,11 +74,11 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `parent`, `banner`, `times`, `created_at`, `updated_at`) VALUES
 (15, 'Cầu lông', 0, '/photos/1/category/badminton-rackets-flipkart-870x516.jpg', NULL, '2018-01-09 07:27:22', '2018-01-09 07:27:22'),
-(16, 'Vợt cầu lông', 15, '/photos/1/category/Untitled-6.png', NULL, '2018-01-09 07:28:01', '2018-01-09 07:28:01'),
 (17, 'Áo cầu lông', 15, '/photos/1/category/pp_0006052_3640_p_1497328608169.jpeg', NULL, '2018-01-09 07:29:07', '2018-01-09 07:29:07'),
 (18, 'Bóng đá', 0, NULL, 1, '2018-01-09 07:29:57', '2018-01-09 08:23:12'),
 (19, 'Giày đá bóng', 18, '/photos/1/26171836_1733926616681980_2347297754516404324_o.jpg', NULL, '2018-01-09 07:30:32', '2018-01-09 07:30:32'),
-(20, 'Quần áo bóng đá', 18, '/photos/1/category/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', 1, '2018-01-09 07:31:35', '2018-01-09 07:54:11');
+(20, 'Quần áo bóng đá', 18, '/photos/1/category/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', 1, '2018-01-09 07:31:35', '2018-01-09 07:54:11'),
+(21, 'Tennis', 0, NULL, NULL, '2018-01-09 08:58:50', '2018-01-09 08:58:50');
 
 -- --------------------------------------------------------
 
@@ -212,11 +212,19 @@ CREATE TABLE `posts` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_cate` int(10) UNSIGNED NOT NULL,
+  `status` tinyint(4) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `posts`
+--
+
+INSERT INTO `posts` (`id`, `name`, `slug`, `content`, `image`, `id_cate`, `status`, `created_at`, `updated_at`) VALUES
+(3, 'Vis du', 'vis-du', '<p>Nội dung b&agrave;i viết<img src=\"/photos/1/logo11.png\" alt=\"\" width=\"2112\" height=\"792\" /></p>', '/photos/1/logo11.png', 4, 1, '2018-01-09 12:25:17', '2018-01-09 12:25:17');
 
 -- --------------------------------------------------------
 
@@ -256,9 +264,18 @@ INSERT INTO `products` (`id`, `name`, `slug`, `id_cate`, `price`, `sale_price`, 
 CREATE TABLE `type_posts` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `type_posts`
+--
+
+INSERT INTO `type_posts` (`id`, `name`, `slug`, `description`, `created_at`, `updated_at`) VALUES
+(4, 'Khuyến mại', 'khuyen-mai', NULL, '2018-01-09 12:23:51', '2018-01-09 12:23:51');
 
 -- --------------------------------------------------------
 
@@ -281,7 +298,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Hai Duc Nguyen', 'duchai196@gmail.com', '$2y$10$erMNAxAwH4Xw1dX7VRkz9O/aade.zt7FFGaqxN51P5Zr4qiIj62kK', NULL, '2018-01-07 11:04:33', '2018-01-07 11:04:33');
+(1, 'Hai Duc Nguyen', 'duchai196@gmail.com', '$2y$10$erMNAxAwH4Xw1dX7VRkz9O/aade.zt7FFGaqxN51P5Zr4qiIj62kK', 'hy3PP2Xt0WwNUIHyYAXazjZOtiWsOmxbhw6EAST8m0qbmh9WFpESHbI7kAwO', '2018-01-07 11:04:33', '2018-01-07 11:04:33');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -387,61 +404,73 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `banners`
 --
 ALTER TABLE `banners`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `img_products`
 --
 ALTER TABLE `img_products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT cho bảng `type_posts`
 --
 ALTER TABLE `type_posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
