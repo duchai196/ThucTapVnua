@@ -1,14 +1,16 @@
 @extends('admin.master')
 
 @section('content')
-
+@section('title')
+    CẬP NHẬT CHUYÊN MỤC
+@endsection
     <!-- ============================================================== -->
     <div class="row">
         <div class="col-6">
             <div class="card">
                 <div class="card-block">
                     <h4 class="card-title">Nhập thông tin vào các trường dưới đây để sửa bài viết</h4>
-                    <form class="form-material m-t-40" action="{{route('type_post.update',$type_post->id)}}"
+                    <form class="form-material m-t-40" action="{{route('type-post.update',$type_post->id)}}"
                           method="POST">
                         {{csrf_field()}}
                         {!!method_field('PUT')!!}
@@ -60,7 +62,7 @@
                                     <td>{{$item->description}}</td>
                                     <td class="text-nowrap" style="text-align: center">
                                         <a data-toggle="tooltip" data-original-title="Edit"
-                                           href="{{route('type_post.edit',$item->id)}}"> <i
+                                           href="{{route('type-post.edit',$item->id)}}"> <i
                                                     class="fa fa-pencil text-inverse m-r-10"></i> </a>
 
 
@@ -88,7 +90,7 @@
             if (confirm('Bạn có muốn xóa chuyên mục này không?')) {
                 var id = $(this).attr('data-id');
                 $.ajax({
-                    url: '{{route('type_post.ajax')}}',
+                    url: '{{route('type-post.ajax')}}',
                     type: 'POST',
                     dataType: 'json',
                     data: {id: id, 'action': 'Delete'},

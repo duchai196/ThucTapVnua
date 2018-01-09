@@ -4,11 +4,11 @@
 
     <!-- ============================================================== -->
     <div class="row">
-        <div class="col-6">
+        <div class="col-5">
             <div class="card">
                 <div class="card-block">
                     <h4 class="card-title">Nhập thông tin vào các trường dưới đây để thêm bài viết</h4>
-                    <form class="form-material m-t-40" action="{{route('type_post.store')}}" method="POST">
+                    <form class="form-material m-t-40" action="{{route('type-post.store')}}" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
                             <label>Tên chuyên mục</label>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-7">
             <div class="card">
                 <div class="card-block">
                     <h4 class="card-title">Danh sách chuyên mục</h4>
@@ -56,7 +56,7 @@
                                     <td>{{$item->description}}</td>
                                     <td class="text-nowrap" style="text-align: center">
                                         <a data-toggle="tooltip" data-original-title="Edit"
-                                           href="{{route('type_post.edit',$item->id)}}"> <i
+                                           href="{{route('type-post.edit',$item->id)}}"> <i
                                                     class="fa fa-pencil text-inverse m-r-10"></i> </a>
 
 
@@ -84,7 +84,7 @@
             if (confirm('Bạn có muốn xóa chuyên mục này không?')) {
                 var id = $(this).attr('data-id');
                 $.ajax({
-                    url: '{{route('type_post.ajax')}}',
+                    url: '{{route('type-post.ajax')}}',
                     type: 'POST',
                     dataType: 'json',
                     data: {id: id, 'action': 'Delete'},

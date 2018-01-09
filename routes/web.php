@@ -20,7 +20,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
     Route::resource('type-post', 'TypePostController');
     Route::resource('post', 'PostController');
     Route::post('category/delete', 'CategoryController@postDelete')->name('category.delete');
-    Route::post('delete', 'ProductController@postDelete')->name('product.delete');
+    Route::post('product/delete', 'ProductController@postDelete')->name('product.delete');
+    Route::post('post/delete', 'TypePostController@postDelete')->name('type-post.ajax');
 
 });
 
@@ -28,3 +29,5 @@ Route::view('editor', 'vendor.laravel-filemanager.demo');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::view('t', 'admin.type_post.edit');

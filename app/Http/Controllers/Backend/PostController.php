@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Model\Post;
+use App\Model\Type_post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -14,7 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $listPost = Post::paginate(10);
+        return view('admin.post.add', compact('listPost'));
+
     }
 
     /**
@@ -24,7 +29,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $type_post = Type_post::all();
+
+        return view('admin.post.add', compact('type_post'));
     }
 
     /**
@@ -35,7 +42,29 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|unique:posts|max:255|min:1',
+            'content' => 'required|min:1',
+
+        ],
+
+            [
+                'title.required' => 'Bạn chưa nhập mô tả',
+                'title.unique' => 'Mô tả đã tồn tại',
+                'content.required' => 'Vui lòng điền nội dung bài viết'
+
+            ]);
+
+        $post = new Post();
+        $post->name = $request->name;
+        $post->slug = str_slug($post->name);
+        $post->content = $request->content;
+        $post->status = $request->status;
+        $post->id_cate = $request->type_post;
+        $post->image = $request->image;
+        $post->save();
+        Session::flash('message', 'Thêm bài viết thành công');
+        return redirect()->back();
     }
 
     /**

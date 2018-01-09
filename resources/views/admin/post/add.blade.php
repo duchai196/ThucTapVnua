@@ -16,7 +16,7 @@
                         <div class="form-group">
                             <label>Tiêu đề bài viết</label>
                             <input type="text" class="form-control form-control-line" placeholder="Some text value..."
-                                   name="title"></div>
+                                   name="name"></div>
 
                         <div class="form-group">
                             <label>Nội dung bài viết</label>
@@ -26,7 +26,7 @@
                             <label>Danh mục bài viết</label>
                             <select class="form-control selectpicker" name="type_post">
                                 <option value="1">-- Tin tức</option>
-                                <?php cate_post($cate);?>
+                                <?php cate_post($type_post);?>
                             </select>
                         </div>
 
