@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 08, 2018 lúc 09:06 AM
+-- Thời gian đã tạo: Th1 09, 2018 lúc 04:44 PM
 -- Phiên bản máy phục vụ: 10.1.26-MariaDB
 -- Phiên bản PHP: 7.1.8
 
@@ -63,10 +63,22 @@ CREATE TABLE `categories` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `parent` int(11) NOT NULL,
   `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` tinyint(4) NOT NULL,
+  `times` int(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `parent`, `banner`, `times`, `created_at`, `updated_at`) VALUES
+(15, 'Cầu lông', 0, '/photos/1/category/badminton-rackets-flipkart-870x516.jpg', NULL, '2018-01-09 07:27:22', '2018-01-09 07:27:22'),
+(16, 'Vợt cầu lông', 15, '/photos/1/category/Untitled-6.png', NULL, '2018-01-09 07:28:01', '2018-01-09 07:28:01'),
+(17, 'Áo cầu lông', 15, '/photos/1/category/pp_0006052_3640_p_1497328608169.jpeg', NULL, '2018-01-09 07:29:07', '2018-01-09 07:29:07'),
+(18, 'Bóng đá', 0, NULL, 1, '2018-01-09 07:29:57', '2018-01-09 08:23:12'),
+(19, 'Giày đá bóng', 18, '/photos/1/26171836_1733926616681980_2347297754516404324_o.jpg', NULL, '2018-01-09 07:30:32', '2018-01-09 07:30:32'),
+(20, 'Quần áo bóng đá', 18, '/photos/1/category/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', 1, '2018-01-09 07:31:35', '2018-01-09 07:54:11');
 
 -- --------------------------------------------------------
 
@@ -99,6 +111,19 @@ CREATE TABLE `img_products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `img_products`
+--
+
+INSERT INTO `img_products` (`id`, `id_product`, `image`, `created_at`, `updated_at`) VALUES
+(1, 9, '/photos/1/4150290-battlefield-4-premium.jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
+(2, 9, '/photos/1/Desert.jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
+(3, 9, '/photos/1/26694023_1412177798892384_855156102_n.jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
+(4, 9, '/photos/1/Simple & Minimals Wallpaper PC, Laptop P1 (13).jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
+(5, 10, '/photos/1/26171836_1733926616681980_2347297754516404324_o.jpg', '2018-01-09 08:23:12', '2018-01-09 08:23:12'),
+(6, 10, '/photos/1/4150290-battlefield-4-premium.jpg', '2018-01-09 08:23:12', '2018-01-09 08:23:12'),
+(7, 10, '/photos/1/Desert.jpg', '2018-01-09 08:23:12', '2018-01-09 08:23:12');
 
 -- --------------------------------------------------------
 
@@ -202,15 +227,25 @@ CREATE TABLE `posts` (
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_cate` int(10) UNSIGNED NOT NULL,
-  `price` decimal(15,0) NOT NULL,
-  `sale_price` decimal(15,0) NOT NULL,
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL,
+  `price` decimal(15,0) DEFAULT NULL,
+  `sale_price` decimal(15,0) DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
+  `short_description` longtext COLLATE utf8mb4_unicode_ci,
+  `status` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `slug`, `id_cate`, `price`, `sale_price`, `image`, `description`, `short_description`, `status`, `created_at`, `updated_at`) VALUES
+(9, 'Bộ quần áo Barca', 'bo-quan-ao-barca', 20, '120000', NULL, '/photos/1/product/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', '<p>Bộ quần &aacute;o fcb</p>', '<p>M&ocirc; tả ngắn&nbsp;</p>\r\n<p><img src=\"/photos/1/26171836_1733926616681980_2347297754516404324_o.jpg\" alt=\"\" width=\"1440\" height=\"960\" /></p>', NULL, '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
+(10, 'Bóng', 'bong', 18, NULL, NULL, '/photos/1/product/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', '<p>M&ocirc; tả chi tiết</p>', '<p>M&ocirc; tả ngắn</p>', NULL, '2018-01-09 08:23:12', '2018-01-09 08:23:12');
 
 -- --------------------------------------------------------
 
@@ -361,7 +396,7 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT cho bảng `customers`
 --
@@ -371,7 +406,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT cho bảng `img_products`
 --
 ALTER TABLE `img_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT cho bảng `migrations`
 --
@@ -396,7 +431,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT cho bảng `type_posts`
 --
