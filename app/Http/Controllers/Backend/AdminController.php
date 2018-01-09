@@ -83,4 +83,9 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function getDashboard()
+    {
+        return view('admin.pages.home');
+    }
 }

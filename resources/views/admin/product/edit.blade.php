@@ -4,7 +4,9 @@
 @endsection
 @section('content')
 
-
+@section('title')
+    CHỈNH SỬA SẢN PHẨM
+@endsection
     <!-- ============================================================== -->
     <div class="row">
         <div class="col-8">
@@ -22,13 +24,13 @@
                         <div class="form-group">
                             <label for="price_unit">Gía sản phẩm <span class="help"> e.g. "200000"</span></label>
                             <input type="number" id="price_unit" name="price_unit" class="form-control"
-                                   value="{!!old('price_unit'),isset($product)? $product->price_unit:null!!}">
+                                   value="{!!old('price_unit'),isset($product)? $product->price:null!!}">
                         </div>
                         <div class="form-group">
                             <label for="price_promotion">Gía khuyến mãi <span class="help"> e.g. "100000"</span>
                             </label>
                             <input type="number" name="price_promotion" class="form-control"
-                                   value="{!!old('price_promotion'),isset($product)? $product->price_promotion:null!!}">
+                                   value="{!!old('price_promotion'),isset($product)? $product->sale_price:null!!}">
                         </div>
 
                         <div class="form-group">
@@ -47,7 +49,7 @@
                             <label>Danh mục sản phẩm</label>
                             <select class="form-control selectpicker" name="cate_id">
                                 <option>-- vui lòng chọn</option>
-                                <?php cate_parent($parent);?>
+                                <?php cate_parent($categories);?>
                             </select>
                         </div>
 

@@ -11,21 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@getDashboard');
     Route::resource('category', 'CategoryController');
     Route::resource('product', 'ProductController');
     Route::resource('customer', 'CustomerController');
     Route::resource('type-post', 'TypePostController');
     Route::resource('post', 'PostController');
-    Route::post('delete', 'CategoryController@postDelete')->name('category.delete');
+    Route::post('category/delete', 'CategoryController@postDelete')->name('category.delete');
+    Route::post('delete', 'ProductController@postDelete')->name('product.delete');
 
 });
 
 Route::view('editor', 'vendor.laravel-filemanager.demo');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

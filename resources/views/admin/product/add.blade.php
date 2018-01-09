@@ -3,7 +3,17 @@
     <link rel="stylesheet" href="plugins/dropify/dist/css/dropify.min.css">
 @endsection
 @section('content')
+@section('title')
+    THÊM MỚI SẢN PHẨM
+@endsection
 
+@if(count($errors)>0)
+    @foreach($errors->all() as $err)
+        <div class="alert alert-warning alert-rounded">
+            {!! $err !!}
+        </div>
+    @endforeach
+@endif
 
     <!-- ============================================================== -->
     <div class="row">
@@ -42,7 +52,7 @@
                             <label>Danh mục sản phẩm</label>
                             <select class="form-control selectpicker" name="cate_id">
                                 <option>-- vui lòng chọn</option>
-                                <?php cate_parent($parent);?>
+                                <?php cate_parent($categories);?>
                             </select>
                         </div>
 

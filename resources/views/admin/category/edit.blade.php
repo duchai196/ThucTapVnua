@@ -50,13 +50,35 @@
                                 <input id="thumbnail" class="form-control " type="text" name="filepath"
                                        value="{!! old('filepath',isset($cate)? $cate->banner: NULL) !!}">
                             </div>
-                            <img id="holder" style="margin-top:15px;max-height:100px;">
+                            <img id="holder" style="margin-top:15px;max-height:100px;margin-bottom: 15px">
+                            <button class="btn btn-default" onclick="history.back()"> Quay lại</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card card-outline-inverse ">
+                <div class="card-header">
+                    <h4 class="m-b-0 text-white">Đăng bài viết</h4></div>
+                <div class="card-block">
+                    <p class="card-title">Được tạo lúc: {!!$cate->created_at->format('H:i:s d-m-Y')!!}</p>
+                    <p class="card-title">Được cập nhật lúc: {!!$cate->updated_at->format('H:i:s d-m-Y')!!}</p>
+                    <p class="card-text"></p>
 
 
-                            <a href="{{route('category.index')}}" class="btn  btn-waring"><i class="fa fa-undo"></i> Hủy
-                                bỏ</a>
-                            <button class="btn  btn-success" type="submit"><i class="fa fa-refresh"></i> Cập nhật
-                            </button>
+                    <button class="btn btn-success waves-effect waves-light m-r-10 pull-right" type="submit">Cập nhật
+
+                    </button>
+                    </form>
+                    <form action="{{route('category.destroy',$cate->id)}}" method="POST">
+                        {{method_field('DELETE')}}
+                        {{csrf_field()}}
+                        <button class="btn btn-warning waves-effect waves-light m-r-10 pull-left" type="submit"
+                                onclick="function(){
+                            confirm('Bạn có chắc muốn xóa danh mục này?');
+                        }">Xoá
+                        </button>
                     </form>
                 </div>
             </div>

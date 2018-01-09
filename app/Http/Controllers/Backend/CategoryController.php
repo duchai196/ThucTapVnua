@@ -18,8 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(12);
-        return view('admin.category.list', compact('categories'));
+        $parent = Category::all();
+        return view('admin.category.add', compact('parent', 'categories'));
     }
 
     /**
@@ -47,8 +47,8 @@ class CategoryController extends Controller
         $category->banner = $request->filepath;
         $category->save();
         Session::flash('message', 'Thêm danh mục thành công!');
-        $parent = Category::all();
-        return view('admin.category.add', compact('parent'));
+
+        return redirect()->back();
     }
 
     /**
@@ -96,8 +96,8 @@ class CategoryController extends Controller
 
         $cate_update->save();
         Session::flash('message', 'Cập nhật thành công!');
-        $parent = Category::paginate(12);
-        return view('admin.category.list', compact('parent'));
+
+        return redirect()->back();
 
     }
 
@@ -109,7 +109,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id)->delete();
+        return redirect()->route('category.create');
     }
 
     public function postDelete(Request $request)

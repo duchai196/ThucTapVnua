@@ -7,12 +7,16 @@
 @extends('admin.master')
 @section('content')
 
+@section('title')
+    DANH SÁCH SẢN PHẨM
+@endsection
+
     <div class="row">
         <div class="col-12">
             <!-- Column -->
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">Danh sách sản phẩm</h4>
+
                     @if(count($list_product)>0)
                         <table id="demo-foo-addrow2" class="table table-bordered table-hover toggle-circle"
                                data-page-size="7">
@@ -45,19 +49,19 @@
                                     <td class="text-center">{{$item->id}}</td>
                                     <td><img src="{!!$item->image!!}" alt="" width="auto" height="60px"></td>
                                     <td>{{$item->name}}</td>
-                                    <td class="text-center">{{number_format($item->price_unit)}} VND</td>
+                                    <td class="text-center">{{number_format($item->price)}} VND</td>
                                     <td class="text-center">
                                         <?php
-                                        $cate = DB::table('categories')->select('id', 'name')->where('id', '=', $item->cate_id)->first();
+                                        $cate = DB::table('categories')->select('id', 'name')->where('id', '=', $item->id_cate)->first();
                                         echo $cate->name;
                                         ?>
 
                                     </td>
                                     <td class="text-center">
-                                        @if($item->Avail==1)
-                                            {{"Còn hàng"}}
+                                        @if($item->status==1)
+                                            {{"Hiện"}}
                                         @else
-                                            {{"Hết hàng"}}
+                                            {{"Ẩn"}}
                                         @endif
 
                                     </td>
@@ -79,15 +83,12 @@
                             <tfoot>
                             <tr>
                                 <td colspan="6">
-                                    <div class="text-right">
-                                        <ul class="pagination">
-                                            {{$list_product->render()}}
-                                        </ul>
-                                    </div>
+                                    {!! $list_product->render() !!}
                                 </td>
                             </tr>
                             </tfoot>
                         </table>
+
                     @else
                         <h3>Chưa có sản phẩm nào!! Vui lòng <a href="{{route('product.create')}}">Thêm sản phẩm</a></h3>
                     @endif
@@ -107,7 +108,7 @@
             if (confirm('Bạn có chắc muốn xóa?')) {
                 var id_product = $(this).attr('data-product-id');
                 $.ajax({
-                    url: '{{route('product.ajax')}}',
+                    url: '{{route('product.delete')}}',
                     type: 'POST',
                     dataType: 'json',
                     data: {id_product: id_product, action: 'DeleteProduct'},
