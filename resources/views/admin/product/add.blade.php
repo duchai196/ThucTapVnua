@@ -55,6 +55,15 @@
                                 <?php cate_parent($categories);?>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label>Chọn thương hiệu</label>
+                            <select class="form-control selectpicker" name="id_brand">
+                                <option value="0">-- vui lòng chọn</option>
+                                @foreach($brands as $item)
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                         <label>Ảnh đại diện </label>
                         <div class="input-group">

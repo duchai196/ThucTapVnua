@@ -47,6 +47,11 @@
 
                 </li>
                 <li>
+                    <a href="{{route('brand.index')}}"><i class="mdi mdi-barcode"></i><span
+                                class="hide-menu">Nhãn hiệu</span></a>
+
+                </li>
+                <li>
                     <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-xbox"></i><span
                                 class="hide-menu">Sản phẩm</span></a>
                     <ul aria-expanded="false" class="collapse">

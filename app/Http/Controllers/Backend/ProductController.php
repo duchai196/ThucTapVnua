@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Model\Brand;
 use App\Model\Category;
 use App\Model\Img_product;
 use App\Model\Product;
@@ -33,7 +34,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.product.add', compact('categories'));
+        $brands = Brand::all();
+        return view('admin.product.add', compact('categories', 'brands'));
     }
 
     /**
@@ -50,6 +52,7 @@ class ProductController extends Controller
         $product->price = $request->price_unit;
         $product->sale_price = $request->price_promotion;
         $product->id_cate = $request->cate_id;
+        $product->id_brand = $request->id_brand;
         $product->image = $request->image;
         $product->description = $request->description;
         $product->short_description = $request->short_description;
@@ -105,6 +108,7 @@ class ProductController extends Controller
 //            echo $val['parent']."<br>";
 //        }
 //        dd();
+        $brands = Brand::all();
         $product = Product::findOrFail($id);
 
         return view('admin.product.edit', compact('categories', 'product'));
@@ -126,6 +130,7 @@ class ProductController extends Controller
         $product->price = $request->price_unit;
         $product->sale_price = $request->price_promotion;
         $product->id_cate = $request->cate_id;
+        $product->id_brand = $request->id_brand;
         $product->image = $request->image;
         $product->description = $request->description;
         $product->short_description = $request->short_description;
