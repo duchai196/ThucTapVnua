@@ -87,7 +87,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $type_post = Type_post::all();
+        $post = Post::findOrFail($id);
+        return view('admin.post.edit', compact('type_post', 'post'));
     }
 
     /**
@@ -99,7 +101,16 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->name = $request->name;
+        $post->slug = str_slug($post->name);
+        $post->content = $request->content;
+        $post->status = $request->status;
+        $post->id_cate = $request->type_post;
+        $post->image = $request->image;
+        $post->save();
+        Session::flash('message', 'Sửa bài viết thành công');
+        return redirect()->back();
     }
 
     /**
@@ -110,6 +121,23 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        Session::flash('message', 'xóa bài viết viết thành công');
+        return redirect()->back();
+    }
+
+    public function postDelete(Request $request)
+    {
+        $id = $request->id;
+        $action = $request->action;
+        if ($action == "Delete") {
+            $posts = DB::table('posts')->where('id_cate', '=', $id)->count();
+            $cate = Type_post::find($id);
+            if ($cate->delete()) {
+
+                return json_encode(true);
+            }
+            return json_encode(false);
+        }
     }
 }
