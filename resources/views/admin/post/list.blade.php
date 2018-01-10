@@ -36,12 +36,14 @@
                             </div>
                         </div>
                         <tbody>
-                        @foreach($listPost as $item_post)
+                        @foreach($listPosts as $item_post)
                             <tr>
                                 <td>{{$item_post->id}}</td>
                                 <td><img src="{{$item_post->image}}" alt="" width="80px" height="60px"></td>
-                                <td>{{$item_post->title}}</td>
-                                <td>{{$item_post->cate_post['name']}}</td>
+                                <td>{{$item_post->name}}</td>
+                                <td><?php  $cate = DB::table('type_posts')->select('name')->where('id', '=', $item_post->id_cate)->first();
+                                    echo $cate->name;
+                                    ?></td>
                                 <td>{!!str_limit(strip_tags($item_post->content,200))!!}</td>
                                 <td class="text-nowrap" style="text-align: center">
                                     <a data-toggle="tooltip" data-original-title="Edit"

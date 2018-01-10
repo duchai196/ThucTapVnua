@@ -12,7 +12,7 @@
 */
 
 
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'AdminController@getDashboard');
     Route::resource('category', 'CategoryController');
     Route::resource('product', 'ProductController');

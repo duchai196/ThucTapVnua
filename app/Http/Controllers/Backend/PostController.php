@@ -17,8 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $listPost = Post::paginate(10);
-        return view('admin.post.add', compact('listPost'));
+        $listPosts = Post::paginate(10);
+        $typePost = Type_post::all();
+        return view('admin.post.list', compact('listPosts', 'typePost'));
 
     }
 
