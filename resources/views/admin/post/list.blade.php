@@ -54,7 +54,8 @@
                                       style="display: inline-block;" clas="form">
                                     {!!csrf_field()!!}
                                     {{method_field('DELETE')}}
-                                    <button type="submit"><i class="fa fa-close text-danger"></i> </button>
+                                    <button type="submit"><i class="fa fa-close text-danger"
+                                                             onclick="return confirm('Ban co muon xoa khong?')"></i> </button>
                                 </form>
                             </span>
                                 </td>

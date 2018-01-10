@@ -17,7 +17,7 @@
                         <div class="form-group">
                             <label>Tiêu đề bài viết</label>
                             <input type="text" class="form-control form-control-line" placeholder="Some text value..."
-                                   name="title" value="{!!old('title'),isset($post)? $post->title:null!!}"></div>
+                                   name="name" value="{!!old('name'),isset($post)? $post->name:null!!}"></div>
 
                         <div class="form-group">
                             <label>Nội dung bài viết</label>
@@ -27,8 +27,8 @@
                         <div class="form-group">
                             <label>Danh mục bài viết</label>
                             <select class="form-control selectpicker" name="type_post">
-                                <option value="1">-- Tin tức</option>
-                                <?php cate_post($cate);?>
+                                <option value="{{$post->id_cate}}">{{$post->name}}</option>
+                                <?php cate_post($type_post);?>
                             </select>
                         </div>
 
@@ -89,9 +89,7 @@
                         {{method_field('DELETE')}}
                         {{csrf_field()}}
                         <button class="btn btn-warning waves-effect waves-light m-r-10 pull-left" type="submit"
-                                onclick="function(){
-                            confirm('Bạn có chắc muốn xóa bài viết này>');
-                        }">Xoá
+                                onclick="return confirm('Ban co muon xoa khong?')">Xoá
                         </button>
                     </form>
                 </div>
