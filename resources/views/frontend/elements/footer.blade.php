@@ -5,41 +5,35 @@
         <div id="introduce-box" class="row">
             <div class="col-md-3">
                 <div id="address-box">
-                    <a href="#"><img src="assets/data/introduce-logo.png" alt=""/></a>
+                    <a href="#"><img src="favicon.ico" alt=""/></a>
                     <div id="address-list">
-                        <div class="tit-name">Address:</div>
-                        <div class="tit-contain">Example Street 68, Mahattan, New York, USA.</div>
-                        <div class="tit-name">Phone:</div>
-                        <div class="tit-contain">+00 123 456 789</div>
+                        <div class="tit-name">Cơ sở 1:</div>
+                        <div class="tit-contain">Hùng Hải Sport,82 Hoàng Như Tiếp, Long Biên, Hà Nội.</div>
+                        <div class="tit-name">Cơ sở 2:</div>
+                        <div class="tit-contain">11- Ngõ 570 Thanh Liệt, Thanh Trì, Hà Nội.</div>
+                        <div class="tit-name">Điện thoại:</div>
+                        <div class="tit-contain"><a href="  tel:(+84)979438834">(+84) 979438834</a></div>
                         <div class="tit-name">Email:</div>
-                        <div class="tit-contain">support@business.com</div>
+                        <div class="tit-contain"><a href="  mailto:hunghaisport@gmail.com">hunghaisport@gmail.com</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="introduce-title">Company</div>
-                        <ul id="introduce-company" class="introduce-list">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Affiliate Program</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="introduce-title">My Account</div>
+
+                    <div class="col-sm-6">
+                        <div class="introduce-title">Tài khoản</div>
                         <ul id="introduce-Account" class="introduce-list">
-                            <li><a href="#">My Order</a></li>
+                            <li><a href="#">Đơn đặt hàng</a></li>
                             <li><a href="#">My Wishlist</a></li>
                             <li><a href="#">My Credit Slip</a></li>
                             <li><a href="#">My Addresses</a></li>
                             <li><a href="#">My Personal In</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="introduce-title">Support</div>
+                    <div class="col-sm-6">
+                        <div class="introduce-title">Hỗ trợ</div>
                         <ul id="introduce-support" class="introduce-list">
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Testimonials</a></li>

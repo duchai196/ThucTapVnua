@@ -5,7 +5,7 @@
             <div class="nav-top-links">
                 <a class="first-item" href="tel:0979438834"><img alt="phone" src="assets/images/phone.png"/>(+84)
                     979438834</a>
-                <a href="mailto:hunghaisport@gmail.com"><img alt="email" src="assets/images/email.png"/>hunghaisport@gmail.com!</a>
+                <a href="mailto:hunghaisport@gmail.com"><img alt="email" src="assets/images/email.png"/>hunghaisport@gmail.com</a>
             </div>
 
 

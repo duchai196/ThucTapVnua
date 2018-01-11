@@ -78,11 +78,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p40.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -91,11 +87,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -121,11 +113,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p35.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -134,11 +122,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -164,11 +148,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p41.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -177,11 +157,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -207,11 +183,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p37.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -220,11 +192,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -250,11 +218,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p38.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -263,11 +227,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -293,11 +253,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p39.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -306,11 +262,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -337,11 +289,7 @@
                                             <img class="img-responsive" alt="product"
                                                  src="assets/data/product-300x366.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -350,11 +298,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -380,11 +324,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p36.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -393,11 +333,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -423,11 +359,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p42.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -436,11 +368,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -466,11 +394,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p34.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -479,11 +403,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -509,11 +429,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p89.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -522,11 +438,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -552,11 +464,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p90.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -565,11 +473,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -595,11 +499,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p91.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -608,11 +508,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -638,11 +534,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p92.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -651,11 +543,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -681,11 +569,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p93.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -694,11 +578,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -724,11 +604,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p94.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -737,11 +613,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -767,11 +639,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p95.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -780,11 +648,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
@@ -810,11 +674,7 @@
                                         <a href="detail.html">
                                             <img class="img-responsive" alt="product" src="assets/data/p96.jpg"/>
                                         </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#add">Add to Cart</a>
                                         </div>
@@ -823,11 +683,7 @@
                                         <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
                                         </h5>
                                         <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+
                                         </div>
                                         <div class="content_price">
                                             <span class="price product-price">$38,95</span>
