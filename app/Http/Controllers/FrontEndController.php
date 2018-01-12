@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use View;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class FrontEndController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.pages.index');
+        return view('index');
     }
-
 }

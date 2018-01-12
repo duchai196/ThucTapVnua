@@ -19,6 +19,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'au
     Route::post('product/delete', 'ProductController@postDelete')->name('product.delete');
     Route::post('post/delete', 'TypePostController@postDelete')->name('type-post.ajax');
     Route::post('brand/delete', 'BrandController@postDelete')->name('brand.ajax');
+    Route::post('banner/delete', 'BannerController@postDelete')->name('banner.delete');
 
     Route::resources(
         [
@@ -27,7 +28,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'au
             'product' => 'ProductController',
             'customer' => 'CustomerController',
             'type-post' => 'TypePostController',
-            'post' => 'PostController'
+            'post' => 'PostController',
+            'banner' => 'BannerController'
         ]
     );
 

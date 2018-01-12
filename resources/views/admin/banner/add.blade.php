@@ -8,17 +8,20 @@
             <div class="card">
                 <div class="card-block">
                     <h4 class="card-title">Nhập thông tin vào các trường dưới đây để thêm banner</h4>
-                    <form class="form-material m-t-40" action="{{route('type-post.store')}}" method="POST">
+                    <form class="form-material m-t-40" action="{{route('banner.store')}}" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
                             <label>Tên Banner</label>
                             <input type="text" class="form-control form-control-line" placeholder="Some text value..."
                                    name="name" required="">
                         </div>
+
                         <div class="form-group">
-                            <label>Sắp xếp</label>
-                            <textarea class="form-control" rows="5" name="odoring"></textarea>
+                            <label>Link banner</label>
+                            <input type="text" class="form-control form-control-line" placeholder="Some text value..."
+                                   name="link" required="">
                         </div>
+
 
                         <label>Ảnh đại diện </label>
                         <div class="input-group">
@@ -31,28 +34,7 @@
                         </div>
                         <img id="holder" style="margin-top:15px;max-height:100px;">
 
-                        {{-- thư viện ảnh --}}
-                        <label>Bộ sưu tập ảnh </label>
-                        <div class="row">
-                            @for($lfm=1;$lfm<7;$lfm++)
-                                <div class="col-md-3">
-                                    <div class="input-group ">
-                            <span class="input-group-btn">
-                                <a id="lfm{{$lfm}}" data-input="thumbnail{{$lfm}}" data-preview="holder" class="btn ">
-                                  <i class="fa fa-picture-o"></i> Choose
-                              </a>
-                              </span>
-                                        <input id="thumbnail{{$lfm}}" class="form-control" type="text"
-                                               name="imageDetail[]">
-                                    </div>
-                                    <img id="holder" style="margin-top:15px;max-height:100px;">
-                                </div>
-                            @endfor
-                        </div>
-                        <div class="form-group">
-                            <label>Sắp xếp</label>
-                            <textarea class="form-control" rows="5" name="odoring"></textarea>
-                        </div>
+
                         <div class="radio"><p>Hiển thị banner</p>
                             <input type="radio" name="status" id="radio11" value="1" checked="checked">
                             <label for="radio11"> Hiện </label>
@@ -63,7 +45,7 @@
 
                         <a href="{{ URL::previous() }}" class="btn btn-inverse waves-effect waves-light">Quay lại</a>
                         <button class="btn btn-success waves-effect waves-light m-r-10 pull-right" type="submit">Thêm
-                            chuyên mục
+                            banner
                         </button>
 
                     </form>
@@ -75,28 +57,31 @@
         <div class="col-7">
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">Danh sách chuyên mục</h4>
+                    <h4 class="card-title">Danh sách banner</h4>
                     <div class="table-responsive" id="dataTable">
                         <table class="table  color-table dark-table">
                             <thead>
                             <tr>
                                 <th>STT</th>
                                 <th>Tên</th>
-                                <th>Sắp xếp</th>
+                                <th>Trạng thái</th>
                                 <th>Ảnh</th>
                                 <th>Hành động</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($listCate as $item)
+                            @foreach($listBanner as $item)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->name}}</td>
-                                    <td>{{$item->odering}}</td>
-                                    <td>{{$item->status}}</td>
+                                    <td>{!! ($item->status=1)? "Hiện": "Ẩn" !!}</td>
+                                    <td><img src="{!! $item->image !!}" alt="{{$item->name}}" width="50" height="50">
+                                    </td>
+
+
                                     <td class="text-nowrap" style="text-align: center">
                                         <a data-toggle="tooltip" data-original-title="Edit"
-                                           href="{{route('type-post.edit',$item->id)}}"> <i
+                                           href="{{route('banner.edit',$item->id)}}"> <i
                                                     class="fa fa-pencil text-inverse m-r-10"></i> </a>
 
 
@@ -109,7 +94,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {!!$listCate->render()!!}
+
                     </div>
                 </div>
             </div>
@@ -124,7 +109,7 @@
             if (confirm('Bạn có muốn xóa chuyên mục này không?')) {
                 var id = $(this).attr('data-id');
                 $.ajax({
-                    url: '{{route('type-post.ajax')}}',
+                    url: '{{route('banner.delete')}}',
                     type: 'POST',
                     dataType: 'json',
                     data: {id: id, 'action': 'Delete'},

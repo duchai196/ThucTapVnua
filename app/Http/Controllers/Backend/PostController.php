@@ -131,7 +131,7 @@ class PostController extends Controller
         $id = $request->id;
         $action = $request->action;
         if ($action == "Delete") {
-            $posts = DB::table('posts')->where('id_cate', '=', $id)->count();
+//            $posts = DB::table('posts')->where('id_cate', '=', $id)->count();
             $cate = Type_post::find($id);
             if ($cate->delete()) {
 

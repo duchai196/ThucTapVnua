@@ -47,6 +47,11 @@
 
                 </li>
                 <li>
+                    <a href="{{route('banner.create')}}"><i class="mdi mdi-camera-burst "></i><span
+                                class="hide-menu">Quản lý banner</span></a>
+
+                </li>
+                <li>
                     <a href="{{route('brand.index')}}"><i class="mdi mdi-barcode"></i><span
                                 class="hide-menu">Nhãn hiệu</span></a>
 
@@ -61,7 +66,8 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
+                    <a mdi-drupalclass="has-arrow " href="#" aria-expanded="false"><i
+                                class="mdi mdi-newspaper"></i><span
                                 class="hide-menu">Bài viết</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{route('post.index')}}">Danh sách bài viết</a></li>
