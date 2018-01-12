@@ -18,8 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $parent = Category::all();
-        return view('admin.category.add', compact('parent', 'categories'));
+        $parents = Category::all();
+        return view('admin.category.add', compact('parents'));
     }
 
     /**
@@ -29,8 +29,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $parent = Category::all();
-        return view('admin.category.add', compact('parent', 'categories'));
+        $parents = Category::all();
+        $categories = Category::paginate(10);
+        return view('admin.category.add', compact('parents', 'categories'));
     }
 
     /**

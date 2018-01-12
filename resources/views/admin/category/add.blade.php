@@ -30,7 +30,7 @@
                                 <label>Danh mục cha</label>
                                 <select class="form-control" name="parent_cate">
                                     <option value="0">Chọn danh mục cha</option>
-                                    {!!  cate_parent($parent)  !!}
+                                    {!!  cate_parent($parents)  !!}
 
                                 </select>
                             </div>
@@ -89,7 +89,7 @@
                         </div>
 
                         <tbody>
-                        @foreach($parent as $item_cate)
+                        @foreach($categories as $item_cate)
                             <tr>
                                 <td>{{$item_cate->id}}</td>
                                 <td>{{$item_cate->name}}</td>
@@ -108,6 +108,7 @@
 
 
                         </tbody>
+                        {!! $categories->render() !!}
                         <tfoot>
                         <tr>
                             <td colspan="6">
