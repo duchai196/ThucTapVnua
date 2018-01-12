@@ -24,7 +24,16 @@
                         <input type="text" class="form-control form-control-line" placeholder="Nhập tên nhãn hiệu..."
                                name="name">
                     </div>
-
+                    <label>Logo thương hiệu</label>
+                    <div class="input-group">
+                           <span class="input-group-btn">
+                               <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn ">
+                                 <i class="fa fa-picture-o"></i> Choose
+                             </a>
+                             </span>
+                        <input id="thumbnail" class="form-control" type="text" name="logo">
+                    </div>
+                    <img id="holder" style="margin-top:15px;max-height:100px;">
 
                     <div style="margin-top: 15px">
                         <button type="" class="btn btn-default" onclick="history.back()">Hủy bỏ</button>

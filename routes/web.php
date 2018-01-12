@@ -38,7 +38,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'au
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::view('/trang-chu', 'frontend.pages.index')->name('index');
+Route::get('/trang-chu', 'HomeController@index')->name('index');
+//Route::view('/trang-chu', 'frontend.pages.index')->name('index');
 Route::view('/tin-tuc', 'frontend.pages.blog')->name('blog');
 Route::view('/lien-he', 'frontend.pages.contact')->name('contact');
 Route::view('/gioi-thieu', 'frontend.pages.about')->name('about');
