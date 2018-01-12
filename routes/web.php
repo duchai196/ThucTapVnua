@@ -20,7 +20,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'au
     Route::post('post/delete', 'TypePostController@postDelete')->name('type-post.ajax');
     Route::post('brand/delete', 'BrandController@postDelete')->name('brand.ajax');
 
-    Route::resource(
+    Route::resources(
         [
             'category' => 'CategoryController',
             'brand' => 'BrandController',
