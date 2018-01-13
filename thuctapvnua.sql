@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 09, 2018 lúc 08:28 PM
--- Phiên bản máy phục vụ: 10.1.29-MariaDB
--- Phiên bản PHP: 7.2.0
+-- Thời gian đã tạo: Th1 13, 2018 lúc 05:25 PM
+-- Phiên bản máy phục vụ: 10.1.26-MariaDB
+-- Phiên bản PHP: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -48,9 +48,44 @@ CREATE TABLE `admins` (
 
 CREATE TABLE `banners` (
   `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `banners`
+--
+
+INSERT INTO `banners` (`id`, `name`, `link`, `status`, `image`, `created_at`, `updated_at`) VALUES
+(4, 'Siêu khuyến mãi', '#', 1, '/photos/1/Simple & Minimals Wallpaper PC, Laptop P1 (12).png', '2018-01-13 01:15:22', '2018-01-13 01:30:00'),
+(5, NULL, NULL, 1, '/photos/1/4150290-battlefield-4-premium.jpg', '2018-01-13 01:24:42', '2018-01-13 01:24:42'),
+(6, NULL, NULL, 0, '/photos/1/Simple & Minimals Wallpaper PC, Laptop P1 (13).jpg', '2018-01-13 01:24:55', '2018-01-13 01:29:43');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `brands`
+--
+
+CREATE TABLE `brands` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `brands`
+--
+
+INSERT INTO `brands` (`id`, `name`, `logo`, `created_at`, `updated_at`) VALUES
+(1, 'Nike', '/photos/1/brands/nike.png', '2018-01-12 04:11:30', '2018-01-12 04:11:30'),
+(2, 'Sức khỏe', '/photos/1/26694023_1412177798892384_855156102_n.jpg', '2018-01-12 04:13:27', '2018-01-12 04:13:27');
 
 -- --------------------------------------------------------
 
@@ -74,11 +109,12 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `parent`, `banner`, `times`, `created_at`, `updated_at`) VALUES
 (15, 'Cầu lông', 0, '/photos/1/category/badminton-rackets-flipkart-870x516.jpg', NULL, '2018-01-09 07:27:22', '2018-01-09 07:27:22'),
-(17, 'Áo cầu lông', 15, '/photos/1/category/pp_0006052_3640_p_1497328608169.jpeg', NULL, '2018-01-09 07:29:07', '2018-01-09 07:29:07'),
-(18, 'Bóng đá', 0, NULL, 1, '2018-01-09 07:29:57', '2018-01-09 08:23:12'),
+(17, 'Áo cầu lông', 15, '/photos/1/category/pp_0006052_3640_p_1497328608169.jpeg', 2, '2018-01-09 07:29:07', '2018-01-10 08:48:30'),
+(18, 'Bóng đá', 0, NULL, 3, '2018-01-09 07:29:57', '2018-01-12 04:14:30'),
 (19, 'Giày đá bóng', 18, '/photos/1/26171836_1733926616681980_2347297754516404324_o.jpg', NULL, '2018-01-09 07:30:32', '2018-01-09 07:30:32'),
-(20, 'Quần áo bóng đá', 18, '/photos/1/category/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', 1, '2018-01-09 07:31:35', '2018-01-09 07:54:11'),
-(21, 'Tennis', 0, NULL, NULL, '2018-01-09 08:58:50', '2018-01-09 08:58:50');
+(20, 'Quần áo bóng đá', 18, '/photos/1/category/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', 2, '2018-01-09 07:31:35', '2018-01-13 09:20:19'),
+(21, 'Tennis', 0, NULL, NULL, '2018-01-09 08:58:50', '2018-01-09 08:58:50'),
+(22, 'Máy chạy bộ', 0, NULL, NULL, '2018-01-12 03:06:22', '2018-01-12 03:06:22');
 
 -- --------------------------------------------------------
 
@@ -117,13 +153,8 @@ CREATE TABLE `img_products` (
 --
 
 INSERT INTO `img_products` (`id`, `id_product`, `image`, `created_at`, `updated_at`) VALUES
-(1, 9, '/photos/1/4150290-battlefield-4-premium.jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
-(2, 9, '/photos/1/Desert.jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
-(3, 9, '/photos/1/26694023_1412177798892384_855156102_n.jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
-(4, 9, '/photos/1/Simple & Minimals Wallpaper PC, Laptop P1 (13).jpg', '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
-(5, 10, '/photos/1/26171836_1733926616681980_2347297754516404324_o.jpg', '2018-01-09 08:23:12', '2018-01-09 08:23:12'),
-(6, 10, '/photos/1/4150290-battlefield-4-premium.jpg', '2018-01-09 08:23:12', '2018-01-09 08:23:12'),
-(7, 10, '/photos/1/Desert.jpg', '2018-01-09 08:23:12', '2018-01-09 08:23:12');
+(10, 14, '/photos/1/Desert.jpg', '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(11, 14, '/photos/1/26694023_1412177798892384_855156102_n.jpg', '2018-01-12 04:14:30', '2018-01-12 04:14:30');
 
 -- --------------------------------------------------------
 
@@ -153,7 +184,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2018_01_07_090942_create_customers_table', 1),
 (12, '2018_01_07_091008_create_admins_table', 1),
 (13, '2018_01_07_091043_create_img_products_table', 1),
-(14, '2018_01_07_091224_create_banners_table', 1);
+(14, '2018_01_07_091224_create_banners_table', 1),
+(16, '2018_01_10_104510_create_sizes_table', 2),
+(18, '2018_01_12_062703_create_banners_table', 3),
+(19, '2018_01_10_104233_create_brands_table', 4);
 
 -- --------------------------------------------------------
 
@@ -224,7 +258,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `name`, `slug`, `content`, `image`, `id_cate`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'Vis du', 'vis-du', '<p>Nội dung b&agrave;i viết<img src=\"/photos/1/logo11.png\" alt=\"\" width=\"2112\" height=\"792\" /></p>', '/photos/1/logo11.png', 4, 1, '2018-01-09 12:25:17', '2018-01-09 12:25:17');
+(3, 'Vis du', 'vis-du', '<p>Nội dung b&agrave;i viết<img src=\"/photos/1/logo11.png\" alt=\"\" width=\"2112\" height=\"792\" /></p>', '/photos/1/Desert.jpg', 4, 1, '2018-01-09 12:25:17', '2018-01-09 12:25:17');
 
 -- --------------------------------------------------------
 
@@ -237,6 +271,7 @@ CREATE TABLE `products` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_cate` int(10) UNSIGNED NOT NULL,
+  `id_brand` int(10) UNSIGNED DEFAULT NULL,
   `price` decimal(15,0) DEFAULT NULL,
   `sale_price` decimal(15,0) DEFAULT NULL,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -251,9 +286,30 @@ CREATE TABLE `products` (
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `slug`, `id_cate`, `price`, `sale_price`, `image`, `description`, `short_description`, `status`, `created_at`, `updated_at`) VALUES
-(9, 'Bộ quần áo Barca', 'bo-quan-ao-barca', 20, '120000', NULL, '/photos/1/product/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', '<p>Bộ quần &aacute;o fcb</p>', '<p>M&ocirc; tả ngắn&nbsp;</p>\r\n<p><img src=\"/photos/1/26171836_1733926616681980_2347297754516404324_o.jpg\" alt=\"\" width=\"1440\" height=\"960\" /></p>', NULL, '2018-01-09 07:54:11', '2018-01-09 07:54:11'),
-(10, 'Bóng', 'bong', 18, NULL, NULL, '/photos/1/product/lionel_messi_10_l_mens_jersey_fc_barcelona_15_16_la_liga_227554e4_12929.jpg', '<p>M&ocirc; tả chi tiết</p>', '<p>M&ocirc; tả ngắn</p>', NULL, '2018-01-09 08:23:12', '2018-01-09 08:23:12');
+INSERT INTO `products` (`id`, `name`, `slug`, `id_cate`, `id_brand`, `price`, `sale_price`, `image`, `description`, `short_description`, `status`, `created_at`, `updated_at`) VALUES
+(14, 'Máy chạy bộ điện HQ 222', 'may-chay-bo-dien-hq-222', 18, 1, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 1, '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(16, 'Máy chạy bộ điện HQ 1', 'may-chay-bo-dien-hq-1', 18, 2, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 0, '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(17, 'Máy chạy bộ điện HQ 12', 'may-chay-bo-dien-hq-12', 18, 2, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 1, '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(18, 'Máy chạy bộ điện HQ 123', 'may-chay-bo-dien-hq-123', 18, 2, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 1, '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(19, 'Máy chạy bộ điện HQ 1234', 'may-chay-bo-dien-hq-1234', 20, 1, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre><label>Logo thương hiệu</label></pre>\r\n<div class=\"input-group\"><br /> <span class=\"input-group-btn\"><br /> <a id=\"lfm\" class=\"btn \" data-input=\"thumbnail\" data-preview=\"holder\"></a><br /> Choose<br /> <br /> </span><br /> <input id=\"thumbnail\" class=\"form-control\" name=\"logo\" type=\"text\" /></div>\r\n<pre><br /><img id=\"holder\" style=\"margin-top: 15px; max-height: 100px;\" /></pre>', '<pre><label>Logo thương hiệu</label></pre>\r\n<div class=\"input-group\"><br /> <span class=\"input-group-btn\"><br /> <a id=\"lfm\" class=\"btn \" data-input=\"thumbnail\" data-preview=\"holder\"></a><br /> Choose<br /> <br /> </span><br /> <input id=\"thumbnail\" class=\"form-control\" name=\"logo\" type=\"text\" /></div>\r\n<pre><br /><img id=\"holder\" style=\"margin-top: 15px; max-height: 100px;\" /></pre>', NULL, '2018-01-12 04:14:30', '2018-01-13 09:20:19'),
+(20, 'Máy chạy bộ điện HQ 21', 'may-chay-bo-dien-hq-21', 18, 2, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 1, '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(21, 'Máy chạy bộ điện HQ 122', 'may-chay-bo-dien-hq-121', 18, 2, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 1, '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(22, 'Máy chạy bộ điện HQ 12343', 'may-chay-bo-dien-hq-12343', 18, 2, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 1, '2018-01-12 04:14:30', '2018-01-12 04:14:30'),
+(23, 'Máy chạy bộ điện HQ 12341', 'may-chay-bo-dien-hq-12341', 15, 2, '12000000', '100000', '/photos/1/4150290-battlefield-4-premium.jpg', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', '<pre>&lt;label&gt;Logo thương hiệu&lt;/label&gt;<br />&lt;div class=\"input-group\"&gt;<br />       &lt;span class=\"input-group-btn\"&gt;<br />           &lt;a id=\"lfm\" data-input=\"thumbnail\" data-preview=\"holder\" class=\"btn \"&gt;<br />             &lt;i class=\"fa fa-picture-o\"&gt;&lt;/i&gt; Choose<br />         &lt;/a&gt;<br />         &lt;/span&gt;<br />    &lt;input id=\"thumbnail\" class=\"form-control\" type=\"text\" name=\"logo\"&gt;<br />&lt;/div&gt;<br />&lt;img id=\"holder\" style=\"margin-top:15px;max-height:100px;\"&gt;</pre>', 1, '2018-01-12 04:14:30', '2018-01-12 04:14:30');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `sizes`
+--
+
+CREATE TABLE `sizes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_product` int(10) UNSIGNED NOT NULL,
+  `name` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -318,6 +374,12 @@ ALTER TABLE `banners`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `brands`
+--
+ALTER TABLE `brands`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -379,7 +441,15 @@ ALTER TABLE `posts`
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `products_name_unique` (`name`),
-  ADD KEY `id_cate` (`id_cate`);
+  ADD KEY `id_cate` (`id_cate`),
+  ADD KEY `id_brand` (`id_brand`);
+
+--
+-- Chỉ mục cho bảng `sizes`
+--
+ALTER TABLE `sizes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sizes_id_product_foreign` (`id_product`);
 
 --
 -- Chỉ mục cho bảng `type_posts`
@@ -404,73 +474,71 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT cho bảng `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT cho bảng `brands`
+--
+ALTER TABLE `brands`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT cho bảng `img_products`
 --
 ALTER TABLE `img_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT cho bảng `sizes`
+--
+ALTER TABLE `sizes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT cho bảng `type_posts`
 --
 ALTER TABLE `type_posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
@@ -498,7 +566,14 @@ ALTER TABLE `posts`
 -- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_cate`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_cate`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`id_brand`) REFERENCES `brands` (`id`);
+
+--
+-- Các ràng buộc cho bảng `sizes`
+--
+ALTER TABLE `sizes`
+  ADD CONSTRAINT `sizes_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
