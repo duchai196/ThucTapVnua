@@ -29,8 +29,15 @@ class HomeController extends Controller
     {
         $banners = Banner::where('status', 1)->limit(3)->orderBy('id', 'DESC')->get();
         $newProduct = DB::table('products')->orderBy('created_at', 'desc')->take(10)->get();
+        $lastestProduct = DB::table('products')->orderBy('created_at', 'desc')->first();
+        $listCate = DB::table('categories')->get();
         $saleProduct = DB::table('products')->where('sale_price', '!=', 0)->take(10)->get();
-        return view('frontend.pages.index', compact('banners', 'newProduct', 'saleProduct'));
+
+
+        $hotDeal = DB::table('products')->select('id', 'price', 'sale_price', 'image', 'name')->where([['sale_price', '!=', null], ['price', '!=', null], ['status', 1]])->take(10)->get();
+
+
+        return view('frontend.pages.index', compact('banners', 'newProduct', 'saleProduct', 'hotDeal'));
     }
 
     public function post()
