@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Banner;
-use App\Model\Brand;
+use App\Model\Post;
 use App\Model\Product;
 use Illuminate\Http\Request;
+use App\Model\Banner;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -15,10 +15,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
@@ -27,13 +27,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newProduct = DB::table('products')->orderBy('created_at', 'desc')->get();
-        $listBrand = Brand::all();
-        $listBanner = DB::table('banners')->where('status', 1)->take(3)->get();
-        $saleProduct = Product::where('sale_price', '!=', 0)->take(10)->get();
-        $badmintonProduct = Product::where('id_cate', 15);
+        $banners = Banner::where('status', 1)->limit(3)->orderBy('id', 'DESC')->get();
+        $newProduct = DB::table('products')->orderBy('created_at', 'desc')->take(10)->get();
+        $saleProduct = DB::table('products')->where('sale_price', '!=', 0)->take(10)->get();
+        return view('frontend.pages.index', compact('banners', 'newProduct', 'saleProduct'));
+    }
 
-        return view('frontend.pages.index', compact('newProduct', 'listBrand', 'listBanner', 'saleProduct', 'badmintonProduct'));
+    public function post()
+    {
+        $post = Post::where('status', 1)->limit(10)->orderBy('id', 'DESC')->get();
+        //dd($post);
+        return view('frontend.pages.blog', [
+            'posts' => $post
+        ]);
     }
 
 }
