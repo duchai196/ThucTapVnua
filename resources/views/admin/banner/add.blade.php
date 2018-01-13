@@ -13,13 +13,13 @@
                         <div class="form-group">
                             <label>Tên Banner</label>
                             <input type="text" class="form-control form-control-line" placeholder="Some text value..."
-                                   name="name" required="">
+                                   name="name">
                         </div>
 
                         <div class="form-group">
                             <label>Link banner</label>
                             <input type="text" class="form-control form-control-line" placeholder="Some text value..."
-                                   name="link" required="">
+                                   name="link">
                         </div>
 
 
@@ -30,7 +30,7 @@
                                  <i class="fa fa-picture-o"></i> Choose
                              </a>
                              </span>
-                            <input id="thumbnail" class="form-control" type="text" name="image">
+                            <input id="thumbnail" class="form-control" type="text" name="image" required>
                         </div>
                         <img id="holder" style="margin-top:15px;max-height:100px;">
 
@@ -74,7 +74,7 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->name}}</td>
-                                    <td>{!! ($item->status=1)? "Hiện": "Ẩn" !!}</td>
+                                    <td>{!! ($item->status==1)? "Hiện": "Ẩn" !!}</td>
                                     <td><img src="{!! $item->image !!}" alt="{{$item->name}}" width="50" height="50">
                                     </td>
 
@@ -115,7 +115,7 @@
                     data: {id: id, 'action': 'Delete'},
                 })
                     .done(function (data) {
-                        $('#dataTable').load(location.href + " #dataTable>table");
+                        $('#dataTable').reload(location.href + " #dataTable>table");
                     })
             }
         });

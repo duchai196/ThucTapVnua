@@ -52,6 +52,7 @@
                     <tr>
                         <th>ID</th>
                         <th data-sort-initial="true" data-toggle="true">Tên</th>
+                        <th data-sort-initial="true" data-toggle="true">Logo</th>
 
                         <th data-sort-ignore="true" class="min-width" style="text-align: center">Hành động</th>
                     </tr>
@@ -78,6 +79,7 @@
                         <tr>
                             <td>{{$item->id}}</td>
                             <td>{{$item->name}}</td>
+                            <td><img src="{{$item->logo}}" height="70px" width="auto" alt=""></td>
                             <td class="text-nowrap" style="text-align: center">
                                 <a data-toggle="tooltip" data-original-title="Edit"
                                    href="{{route('brand.edit',$item->id)}}"> <i

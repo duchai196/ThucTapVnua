@@ -57,7 +57,9 @@
                             <select class="form-control selectpicker" name="id_brand">
                                 <option value="0">-- vui lòng chọn</option>
                                 @foreach($brands as $item)
-                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                    <option value="{{$item->id}}"
+                                            {!! ($item->id==$product->id_brand)? "selected":null !!}
+                                    >{{$item->name}}</option>
                                 @endforeach
                             </select>
                         </div>

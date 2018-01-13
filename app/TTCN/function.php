@@ -5,14 +5,16 @@
  * Date: 1/8/2018
  * Time: 5:47 PM
  */
-function cate_parent($categories, $parent_id = 0, $char = '')
+function cate_parent($categories, $parent_id = 0, $char = '', $select = 0)
 {
     foreach ($categories as $key => $item) {
         // Nếu là chuyên mục con thì hiển thị
         if ($item['parent'] == $parent_id) {
-            echo '<option value="' . $item['id'] . '">';
+
+            echo '<option value="' . $item['id'] . '" >';
             echo $char . $item['name'];
             echo '</option>';
+
 
             // Xóa chuyên mục đã lặp
             unset($categories[$key]);

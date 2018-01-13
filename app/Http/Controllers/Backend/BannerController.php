@@ -39,12 +39,11 @@ class BannerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'image' => 'required',
+            'image' => 'required'
 
         ], [
-            'name.required' => 'Vui lòng nhập tên ',
-            'name.image' => 'Vui lòng chọn ảnh ',
+
+            'image.required' => 'Vui lòng chọn ảnh '
 
         ]);
         $banner = new Banner();
@@ -76,7 +75,9 @@ class BannerController extends Controller
      */
     public function edit(Banner $banner)
     {
-        //
+        $listBanner = Banner::all();
+
+        return view('admin.banner.edit', compact('banner', 'listBanner'));
     }
 
     /**
@@ -88,7 +89,13 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
-        //
+        $banner->name = $request->name;
+        $banner->link = $request->link;
+        $banner->image = $request->image;
+        $banner->status = $request->status;
+        $banner->save();
+        Session::flash('message', 'Cập nhật thành công');
+        return redirect()->back();
     }
 
     /**

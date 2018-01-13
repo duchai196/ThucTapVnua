@@ -47,6 +47,7 @@ class BrandController extends Controller
             ]);
         $brand = new Brand();
         $brand->name = $request->name;
+        $brand->logo = $request->logo;
         $brand->save();
         Session::flash('message', 'Thêm chuyên mục thành công!');
         return redirect()->back();
@@ -95,6 +96,7 @@ class BrandController extends Controller
             ]);
         $brand = Brand::findOrFail($id);
         $brand->name = $request->name;
+        $brand->logo = $request->logo;
         $brand->save();
         Session::flash('message', 'Cập nhật nhãn hiệu!');
         return redirect()->route('brand.index');

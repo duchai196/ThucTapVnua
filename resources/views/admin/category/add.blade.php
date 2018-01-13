@@ -12,7 +12,7 @@
 @endif
 
     <div class="row">
-        <div class="col-6">
+        <div class=" col-md-6 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="card-block">
                     <h4 class="card-title">Nhập đầy đủ thông tin để thêm danh mục</h4>
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class=" col-md-6 col-sm-12 col-xs-12 ">
             <!-- Column -->
             <div class="card">
                 <div class="card-block">
@@ -65,7 +65,7 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th data-sort-initial="true" data-toggle="true">Tên</th>
+                            <th data-sort-initial="true">Tên</th>
                             <th>Danh mục cha</th>
                             <th>Lượt</th>
                             <th data-sort-ignore="true" class="min-width" style="text-align: center">Hành động</th>
