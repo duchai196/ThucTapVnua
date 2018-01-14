@@ -56,8 +56,7 @@
                                     </div>
                                     <div class="col-sm-7">
                                         <div class="entry-ci">
-                                            <h3 class="entry-title"><a href="#">Sed ut perspiciatis unde omnis iste
-                                                    natus error</a></h3>
+                                            <h3 class="entry-title"><a href="#">{{$p->name}}</a></h3>
                                             <div class="entry-meta-data">
                                             <span class="author">
                                             <i class="fa fa-user"></i> 
@@ -76,7 +75,7 @@
                                                 {!! str_limit($p->content,350) !!}}
                                             </div>
                                             <div class="entry-more">
-                                                <a href="#">Read more</a>
+                                                <a href="{{route('singlePost',$p->id)}}">Xem Thêm</a>
                                             </div>
                                         </div>
                                     </div>

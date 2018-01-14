@@ -39,6 +39,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'au
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/trang-chu', 'HomeController@index')->name('index');
+
+Route::get('/tin-tuc/{id}', 'HomeController@singlePost')->name('singlePost');
+
 Route::get('/tin-tuc', 'HomeController@post')->name('blog');
 //Route::view('/trang-chu', 'frontend.pages.index')->name('index');
 //Route::view('/tin-tuc', 'frontend.pages.blog')->name('blog');
