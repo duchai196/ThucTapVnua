@@ -279,8 +279,10 @@
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <?php $badminton = DB::table('categories')->where('parent', 15)->get();?>
-                                @foreach($badminton as $item)
-                                    <li><a data-toggle="tab" href="#tab-{{$item->id}}">{!! $item->name !!}</a></li>
+                                @foreach($badminton as $key=>$item)
+                                    <li class="{{($key==0)? "active":null}}"><a data-toggle="tab"
+                                                                                href="#tab-{{$item->id}}">{!! $item->name !!}</a>
+                                    </li>
                                 @endforeach
 
                             </ul>
@@ -309,24 +311,27 @@
                     <div class="product-featured-content">
                         <div class="product-featured-list">
                             <div class="tab-container">
-                            @foreach($badminton as $item)
+                            @foreach($badminton as $k=>$item)
                                 <!-- tab product -->
-                                    <div class="tab-panel active" id="tab-{{$item->id}}">
+                                    <div class="tab-panel {{($k==0)? "active":null}}" id="tab-{{$item->id}}">
                                     <ul class="product-list owl-carousel" data-dots="false" data-loop="true"
                                         data-nav="true" data-margin="0" data-autoplayTimeout="1000"
                                         data-autoplayHoverPause="true"
                                         data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
-                                        <li>
+                                        <?php $products = DB::table('products')->where('id_cate', $item->id)->take(8)->get();?>
+                                        @foreach($products as $key=>$i)
+
+                                            <li clas="{!! ($key==0)? "active":null !!}">
                                             <div class="left-block">
                                                 <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/01_blue-dress.jpg"/></a>
+                                                    <img alt="product"
+                                                         src="{{$i->image}}" height="327px"/></a>
                                                 <div class="add-to-cart">
                                                     <a title="Add to Cart" href="#">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Blue Dress</a></h5>
+                                                <h5 class="product-name"><a href="detail.html">{!! $i->name !!}</a></h5>
                                                 <div class="content_price">
                                                     <span class="price product-price">$38,95</span>
                                                     <span class="price old-price">$52,00</span>
@@ -337,116 +342,13 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/02_yellow-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Yellow Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/03_cyan-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Cyan Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/04_nice-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Nice Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/05_flowers-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Flowers Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/06_red-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Red Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
+                                        @endforeach
                                     </ul>
-                                </div>
+                                    </div>
+
                                 @endforeach
-                               
                             </div>
+
 
                         </div>
                     </div>
