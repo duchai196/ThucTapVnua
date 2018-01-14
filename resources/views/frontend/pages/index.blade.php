@@ -164,7 +164,7 @@
                                         <li>
                                             <div class="left-block">
                                                 <a href="detail.html">
-                                                    <img height="327px" alt="product" src="{!! $item->image !!}"/>
+                                                    <img height="275" alt="product" src="{!! $item->image !!}"/>
                                                 </a>
                                                 <div class="quick-view">
                                                     <a title="Add to my wishlist" class="heart" href="#"></a>
@@ -205,7 +205,7 @@
                                     <li>
                                         <div class="left-block">
                                             <a href="detail.html"><img alt="product"
-                                                                       src="{{$item->image}}" height="327px"/></a>
+                                                                       src="{{$item->image}}" height="275"/></a>
 
                                             <div class="add-to-cart">
                                                 <a title="Add to Cart" href="#">Add to Cart</a>
@@ -239,7 +239,7 @@
                                     <div class="count-down-time" data-countdown="2018/01/15"></div>
                                     <div class="left-block">
                                         <a href="detail.html"><img alt="product"
-                                                                   src="{!!$hot->image!!}" height="265"/></a>
+                                                                   src="{!!$hot->image!!}" height="275"/></a>
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#">Add to Cart</a>
                                         </div>
@@ -325,7 +325,7 @@
                                             <div class="left-block">
                                                 <a href="detail.html">
                                                     <img alt="product"
-                                                         src="{{$i->image}}" height="327px"/></a>
+                                                         src="{{$i->image}}" height="275"/></a>
                                                 <div class="add-to-cart">
                                                     <a title="Add to Cart" href="#">Add to Cart</a>
                                                 </div>

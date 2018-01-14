@@ -48,7 +48,7 @@
                         <div class="form-group">
                             <label>Danh mục sản phẩm</label>
                             <select class="form-control selectpicker" name="cate_id">
-                                <option>-- vui lòng chọn</option>
+                                <option value="0">-- vui lòng chọn</option>
                                 <?php cate_parent($categories);?>
                             </select>
                         </div>
@@ -80,9 +80,9 @@
                         @endif
 
                         <div class="radio"><p>Hiển thị sản phẩm?</p>
-                            <input type="radio" name="Avail" id="radio11" value="1" checked="">
+                            <input type="radio" name="status" id="radio11" value="1" checked="">
                             <label for="radio11"> Hiện </label>
-                            <input type="radio" name="Avail" id="radio2" value="0">
+                            <input type="radio" name="status" id="radio2" value="0">
                             <label for="radio2"> Ẩn</label>
                         </div>
                         <input class="url" name="url" type="hidden" value="/upload_image">
