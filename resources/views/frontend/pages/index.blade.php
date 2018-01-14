@@ -69,6 +69,7 @@
                             @if(count($saleProduct)>0)
                             <li><a data-toggle="tab" href="#tab-2">Giảm giá</a></li>
                             @endif
+
                             <li><a data-toggle="tab" href="#tab-3">Sản phẩm mới</a></li>
                         </ul>
                         <div class="tab-container">
@@ -81,11 +82,7 @@
                                             <a href="detail.html">
                                                 <img class="img-responsive" alt="product" src="assets/data/bs1.jpg"/>
                                             </a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
+
                                             <div class="add-to-cart">
                                                 <a title="Add to Cart" href="#">Add to Cart</a>
                                             </div>
@@ -100,20 +97,13 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-
-                                            </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="left-block">
                                             <a href="detail.html"><img class="img-responsive" alt="product"
                                                                        src="assets/data/bs2.jpg"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
+
                                             <div class="add-to-cart">
                                                 <a title="Add to Cart" href="#">Add to Cart</a>
                                             </div>
@@ -124,20 +114,13 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-
-                                            </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="left-block">
                                             <a href="detail.html"><img class="img-responsive" alt="product"
                                                                        src="assets/data/bs3.jpg"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
+
                                             <div class="add-to-cart">
                                                 <a title="Add to Cart" href="#">Add to Cart</a>
                                             </div>
@@ -151,20 +134,13 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-
-                                            </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="left-block">
                                             <a href="detail.html"><img class="img-responsive" alt="product"
                                                                        src="assets/data/bs4.jpg"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
+
                                             <div class="add-to-cart">
                                                 <a title="Add to Cart" href="#">Add to Cart</a>
                                             </div>
@@ -174,9 +150,6 @@
                                             <div class="content_price">
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-
                                             </div>
                                         </div>
                                     </li>
@@ -188,32 +161,37 @@
                                     data-margin="30" data-autoplayTimeout="1000" data-autoplayHoverPause="true"
                                     data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
                                     @foreach($saleProduct as $item)
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="detail.html">
-                                                <img alt="product"
-                                                     src="{!! $item->image !!}" width="268px" height="367px"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
+                                        <li>
+                                            <div class="left-block">
+                                                <a href="detail.html">
+                                                    <img height="327px" alt="product" src="{!! $item->image !!}"/>
+                                                </a>
+                                                <div class="quick-view">
+                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
+                                                    <a title="Add to compare" class="compare" href="#"></a>
+                                                    <a title="Quick view" class="search" href="#"></a>
+                                                </div>
+                                                <div class="add-to-cart">
+                                                    <a title="Add to Cart" href="#">Add to Cart</a>
+                                                </div>
+                                                <div class="group-price">
+                                                    {{--<span class="product-new">NEW</span>--}}
+                                                    <span class="product-sale">Sale</span>
+                                                </div>
                                             </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
-                                            </h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
+                                            <div class="right-block">
+                                                <h5 class="product-name"><a href="detail.html">{!! $item->name !!}</a>
+                                                </h5>
+                                                <div class="content_price">
+                                                    <span class="price product-price">{!! number_format($item->sale_price) !!}
+                                                        VND</span>
+                                                    <span class="price old-price">{!! number_format($item->price) !!}
+                                                        VND</span>
+                                                </div>
 
                                             </div>
-                                        </div>
-                                    </li>
+                                        </li>
+
                                     @endforeach
 
                                 </ul>
@@ -223,106 +201,27 @@
                                 <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav="true"
                                     data-margin="30" data-autoplayTimeout="1000" data-autoplayHoverPause="true"
                                     data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
+                                    @foreach($newProduct as $item)
                                     <li>
                                         <div class="left-block">
-                                            <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                       src="assets/data/p60.jpg"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
+                                            <a href="detail.html"><img alt="product"
+                                                                       src="{{$item->image}}" height="327px"/></a>
+
                                             <div class="add-to-cart">
                                                 <a title="Add to Cart" href="#">Add to Cart</a>
                                             </div>
                                         </div>
                                         <div class="right-block">
-                                            <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
+                                            <h5 class="product-name"><a href="detail.html">{{$item->name}}</a>
                                             </h5>
                                             <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-
+                                                <span class="price product-price">{{number_format($item->sale_price)}}
+                                                    VND</span>
+                                                <span class="price old-price">{{number_format($item->price)}} VND</span>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                       src="assets/data/p61.jpg"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
-                                            </h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                       src="assets/data/p62.jpg"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
-                                            </h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                       src="assets/data/p63.jpg"/></a>
-                                            <div class="quick-view">
-                                                <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                <a title="Add to compare" class="compare" href="#"></a>
-                                                <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
-                                            </h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -330,83 +229,34 @@
                 </div>
                 <div class="col-xs-12 col-sm-3 page-top-right">
                     <div class="latest-deals">
-                        <h2 class="latest-deal-title">Sản phẩm mới nhất</h2>
+                        <h2 class="latest-deal-title">Sieu khuyen mai</h2>
                         <div class="latest-deal-content">
                             <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav="true"
                                 data-autoplayTimeout="1000" data-autoplayHoverPause="true"
                                 data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":1}}'>
+                                @foreach($hotDeal as $hot)
                                 <li>
-                                    <div class="count-down-time" data-countdown="2017/06/27"></div>
+                                    <div class="count-down-time" data-countdown="2018/01/15"></div>
                                     <div class="left-block">
-                                        <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                   src="assets/data/ld1.jpg"/></a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+                                        <a href="detail.html"><img alt="product"
+                                                                   src="{!!$hot->image!!}" height="265"/></a>
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="#">Add to Cart</a>
                                         </div>
                                     </div>
                                     <div class="right-block">
-                                        <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
+                                        <h5 class="product-name"><a href="detail.html">{!!$hot->name!!}</a>
                                         </h5>
                                         <div class="content_price">
-                                            <span class="price product-price">$38,95</span>
-                                            <span class="price old-price">$52,00</span>
-                                            <span class="colreduce-percentage">(-10%)</span>
+                                            <span class="price product-price">{!!number_format($hot->sale_price) !!}
+                                                VND</span>
+                                            <span class="price old-price">{!!number_format($hot->price) !!} VND</span>
+                                            <span class="colreduce-percentage">(-{!! number_format((($hot->price-$hot->sale_price)/$hot->price)*100,2)!!}
+                                                %)</span>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="count-down-time" data-countdown="2017/06/27 9:20:00"></div>
-                                    <div class="left-block">
-                                        <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                   src="assets/data/ld2.jpg"/></a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="right-block">
-                                        <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">$38,95</span>
-                                            <span class="price old-price">$52,00</span>
-                                            <span class="colreduce-percentage">(-90%)</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="count-down-time" data-countdown="2017/06/27 9:20:00"></div>
-                                    <div class="left-block">
-                                        <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                   src="assets/data/ld3.jpg"/></a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="right-block">
-                                        <h5 class="product-name"><a href="detail.html">Maecenas consequat mauris</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">$38,95</span>
-                                            <span class="price old-price">$52,00</span>
-                                            <span class="colreduce-percentage">(-20%)</span>
-                                        </div>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -422,18 +272,19 @@
                 <nav class="navbar nav-menu nav-menu-red show-brand">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-brand"><a href="#"><img alt="fashion" src="assets/data/fashion.png"/>fashion</a>
+                        <div class="navbar-brand"><a href="#"><img alt="fashion" src="assets/data/fashion.png"/>Cầu lông</a>
                         </div>
                         <span class="toggle-menu"></span>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a data-toggle="tab" href="#tab-4">Bán chạy nhất</a></li>
-                                <li><a data-toggle="tab" href="#tab-5">Xem nhiều nhất</a></li>
-                                <li><a href="#">Women</a></li>
-                                <li><a href="#">Men</a></li>
-                                <li><a href="#">Kids</a></li>
-                                <li><a href="#">Accessories</a></li>
+                                <?php $badminton = DB::table('categories')->where('parent', 15)->get();?>
+                                @foreach($badminton as $key=>$item)
+                                    <li class="{{($key==0)? "active":null}}"><a data-toggle="tab"
+                                                                                href="#tab-{{$item->id}}">{!! $item->name !!}</a>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
@@ -460,23 +311,27 @@
                     <div class="product-featured-content">
                         <div class="product-featured-list">
                             <div class="tab-container">
+                            @foreach($badminton as $k=>$item)
                                 <!-- tab product -->
-                                <div class="tab-panel active" id="tab-4">
+                                    <div class="tab-panel {{($k==0)? "active":null}}" id="tab-{{$item->id}}">
                                     <ul class="product-list owl-carousel" data-dots="false" data-loop="true"
                                         data-nav="true" data-margin="0" data-autoplayTimeout="1000"
                                         data-autoplayHoverPause="true"
                                         data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
-                                        <li>
+                                        <?php $products = DB::table('products')->where('id_cate', $item->id)->take(8)->get();?>
+                                        @foreach($products as $key=>$i)
+
+                                            <li clas="{!! ($key==0)? "active":null !!}">
                                             <div class="left-block">
                                                 <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/01_blue-dress.jpg"/></a>
+                                                    <img alt="product"
+                                                         src="{{$i->image}}" height="327px"/></a>
                                                 <div class="add-to-cart">
                                                     <a title="Add to Cart" href="#">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Blue Dress</a></h5>
+                                                <h5 class="product-name"><a href="detail.html">{!! $i->name !!}</a></h5>
                                                 <div class="content_price">
                                                     <span class="price product-price">$38,95</span>
                                                     <span class="price old-price">$52,00</span>
@@ -487,311 +342,13 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/02_yellow-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Yellow Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/03_cyan-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Cyan Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/04_nice-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Nice Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/05_flowers-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Flowers Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/06_red-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Red Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
+                                        @endforeach
                                     </ul>
-                                </div>
-                                <!-- tab product -->
-                                <div class="tab-panel" id="tab-5">
-                                    <ul class="product-list owl-carousel" data-dots="false" data-loop="true"
-                                        data-nav="true" data-margin="0" data-autoplayTimeout="1000"
-                                        data-autoplayHoverPause="true"
-                                        data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/04_nice-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Nice Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
+                                    </div>
 
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/05_flowers-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Flowers Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/06_red-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Red Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="#">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/01_blue-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="detail.html">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Blue Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/02_yellow-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Yellow Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/03_cyan-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Cyan Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/04_nice-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Nice Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/05_flowers-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Flowers Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html">
-                                                    <img class="img-responsive" alt="product"
-                                                         src="assets/data/06_red-dress.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Red Dress</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                @endforeach
                             </div>
+
 
                         </div>
                     </div>
@@ -868,111 +425,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                           src="assets/data/p15.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Maecenas consequat
-                                                        mauris</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
 
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                           src="assets/data/p16.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Maecenas consequat
-                                                        mauris</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                           src="assets/data/p14.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Maecenas consequat
-                                                        mauris</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                           src="assets/data/p17.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Maecenas consequat
-                                                        mauris</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="left-block">
-                                                <a href="detail.html"><img class="img-responsive" alt="product"
-                                                                           src="assets/data/p14.jpg"/></a>
-                                                <div class="add-to-cart">
-                                                    <a title="Add to Cart" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="right-block">
-                                                <h5 class="product-name"><a href="detail.html">Maecenas consequat
-                                                        mauris</a></h5>
-                                                <div class="content_price">
-                                                    <span class="price product-price">$38,95</span>
-                                                    <span class="price old-price">$52,00</span>
-                                                </div>
-                                                <div class="product-star">
-
-
-                                                </div>
-                                            </div>
-                                        </li>
                                     </ul>
                                 </div>
                                 <!-- tab product -->
@@ -2309,783 +1762,7 @@
                     <li data-tab="showcase-9" class="item"><img src="assets/data/gucci.png" alt="logo"
                                                                 class="item-img"/></li>
                 </ul>
-                <div class="brand-showcase-content">
-                    <div class="brand-showcase-content-tab active" id="showcase-1">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p24.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
 
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p25.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p26.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p27.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-2">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p10.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p11.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p12.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="#">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p13.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-3">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p14.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p15.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p16.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="#"><img class="img-responsive" src="assets/data/p17.jpg"
-                                                             alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-4">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p18.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p19.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p20.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p21.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-5">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p22.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p23.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p24.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p25.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-6">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p26.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p27.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p28.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p29.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-7">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p30.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p31.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p32.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p15.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-8">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="#"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p25.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p21.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p10.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p23.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="brand-showcase-content-tab" id="showcase-9">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 trademark-info">
-                                <div class="trademark-logo">
-                                    <a href="detail.html"><img src="assets/data/trademark.jpg" alt="trademark"></a>
-                                </div>
-                                <div class="trademark-desc">
-                                    Whatever the occasion, complete your outfit with one of Hermes Fashion’s stylish
-                                    women’s bags. Discover our spring collection.
-                                </div>
-                                <a href="#" class="trademark-link">shop this brand</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 trademark-product">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-repon" src="assets/data/p24.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p14.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p30.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 product-item">
-                                        <div class="image-product hover-zoom">
-                                            <a href="detail.html"><img class="img-responsive" src="assets/data/p29.jpg"
-                                                                       alt=""></a>
-                                        </div>
-                                        <div class="info-product">
-                                            <a href="detail.html">
-                                                <h5>Maecenas consequat mauris</h5>
-                                            </a>
-                                            <span class="product-price">$38.87</span>
-                                            <div class="product-star">
-
-
-                                            </div>
-                                            <a class="btn-view-more" title="View More" href="#">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -3296,4 +1973,7 @@
     </div>
 
 
+@endsection
+@section('script')
+    <script type="text/javascript" src="assets/lib/jquery.bxslider/jquery.bxslider.min.js"></script>
 @endsection
